@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${account.accountName}]]</title>
+</head>
+<body>
+
+<div class="main-content">
+    <div class="header">
+        <h1 class="page-title">[[${account.accountName}]]</h1>
+    </div>
+
+    <div class="user-register">
+        <div class="user-register-form">
+            <form class="user-register-form" action="" method="post">
+                <div class="form-line">
+                    <label class="label">Change Your Account Name:</label>
+                    <input class="input" type="text" th:field="${account.accountName}"/>
+                </div>
+                <div>
+                    <input class="button" type="submit" value="Update Account"/>
+                </div>
+                <a class="close" th:href="@{/users/{userId}(userId=${user.userId})}">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </a>
+            </form>
+            <form th:action="@{/users/{userId}/accounts/{accountId}/delete(userId=${user.userId}, accountId=${account.accountId})}"
+                  method="post">
+                <input class="button-2" type="submit" value="Delete User Account"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

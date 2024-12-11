@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Bank Account</title>
+</head>
+<body>
+<div class="main-content">
+    <div class="header">
+        <h1 class="page-title">Create New Bank Account</h1>
+    </div>
+    <div class="user-register">
+        <form class="user-register-form" action="" method="post">
+            <div class="form-line">
+                <label class="label">Choose an Account Name:</label>
+                <input class="input" type="text" th:field="${account.accountName}"/>
+            </div>
+            <div>
+                <input class="button" type="submit" value="Create Account"/>
+            </div>
+            <a class="close" th:href="@{/users/{userId}(userId=${user.userId})}">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </a>
+        </form>
+    </div>
+</div>
+</body>
+</html>
