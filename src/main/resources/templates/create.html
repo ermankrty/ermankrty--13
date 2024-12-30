@@ -5,21 +5,21 @@
     <title>New Bank Account</title>
 </head>
 <body>
-<div class="main-content">
-    <div class="header">
-        <h1 class="page-title">Create New Bank Account</h1>
+<div>
+    <div>
+        <h1>Create New Bank Account</h1>
     </div>
-    <div class="user-register">
-        <form class="user-register-form" action="" method="post">
-            <div class="form-line">
-                <label class="label">Choose an Account Name:</label>
-                <input class="input" type="text" th:field="${account.accountName}"/>
+    <div>
+        <form action="" method="post">
+            <div>
+                <label>Choose an Account Name:</label>
+                <input type="text" th:field="${account.accountName}"/>
             </div>
             <div>
-                <input class="button" type="submit" value="Create Account"/>
+                <input type="submit" value="Create Account"/>
             </div>
-            <a class="close" th:href="@{/users/{userId}(userId=${user.userId})}">
-                <i class="fa-solid fa-circle-xmark"></i>
+            <a th:href="@{/users/{userId}(userId=${user.userId})}">
+                <i></i>
             </a>
         </form>
     </div>

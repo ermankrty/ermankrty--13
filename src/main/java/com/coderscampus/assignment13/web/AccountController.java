@@ -4,7 +4,6 @@ import com.coderscampus.assignment13.domain.Account;
 import com.coderscampus.assignment13.domain.User;
 import com.coderscampus.assignment13.service.AccountService;
 import com.coderscampus.assignment13.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AccountController {
 
-    @Autowired
     private UserService userService;
-    @Autowired
     private AccountService accountService;
 
+    public AccountController(UserService userService, AccountService accountService) {
+        this.userService = userService;
+        this.accountService = accountService;
+    }
+    
     @GetMapping("/users/{userId}/accounts/new")
     public String getCreateAccount(ModelMap model, @PathVariable Long userId) {
         User user = userService.findById(userId);
